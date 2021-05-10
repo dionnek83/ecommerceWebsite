@@ -1,13 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav {
+  @apply h-12;
+  @apply flex;
+  @apply justify-between;
+  @apply items-center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.section-title {
+  position: relative;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+.section-title::after {
+  content: " ";
+  position: absolute;
+  width: 60px;
+  height: 0.18rem;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: black;
+}
+
+.nav-menu.active {
+  @apply left-0;
+  transition: 350ms;
+}
+
+.nav-menu {
+  /* border: 1px solid black; */
+  transition: 850ms;
+  @apply fixed;
+  @apply top-12;
+  @apply left-0;
+  @apply h-screen;
+  @apply p-8;
+  @apply transition;
+  @apply bg-primary-2;
+  @apply flex;
+  @apply justify-center;
+  @apply -left-full;
+  /* @apply 'w-2/4'; */
+}
+
+.home {
+  /* height: calc(100vh - 3rem); */
+  height: 90vh;
+}
+
+.nav-items {
+  @apply flex;
+  @apply list-none;
+  @apply h-auto;
+  @apply flex-row;
 }
